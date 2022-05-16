@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/*  Kono group utilities likhte hole ta layer components er modde use korte hobe . ete kore btn or btn-purpule class gula use korar pashapashi existing kono class name use korle ta html file er class ta aage (specificity) pradannoo pabe. jemon ekhane btn er modde rounded 2xl dewa ase .. amra jekhane btn use korsi sekhane jodi rounded-sm diy tailee rounded-sm tai kaj korbe  */
+@layer components{
+    /* Group utilities */
+    .btn{
+        @apply ring-2 rounded-2xl px-3 py-1 focus:ring-offset-2
+    }
+    
+    .btn-purple{
+        @apply  text-purple-500 ring-purple-500  hover:bg-purple-500 hover:text-white focus:ring-4 focus:ring-red-300  
+    }
+    
+    .btn-green{
+        @apply text-green-500 ring-green-500  hover:bg-green-500 hover:text-white focus:ring-4 focus:ring-red-300 
+    }
+}
+
+/* ei layer er maddome tailwind er base property gula chaile re-edit kora jai.. jemon tailwind e h1 e default kono style nhai , shb reset kora ... ekhn base property er maddome h1 ke chaile style dewa jai */
+@layer base{
+    h1{
+       @apply text-2xl 
+    }
+}
+
+/* default bave kono class name create kore globally use korte chaile ei base component use korte hy */
+@layer utilities{
+    .text-body{
+        font-size:12px
+    }
+}
+
+
+/* varients */
+/* amdr custom banano utiluty class guloo hover focus ei doroner varients e kaj korbe nah, jodi default vabe ta active korate chai tahole varients er maddome bole dite hobe */
+
+@variants focus, hover{
+    .rotate-0{
+        transform: rotate(0deg)
+    }
+}
